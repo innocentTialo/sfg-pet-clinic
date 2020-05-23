@@ -15,16 +15,13 @@
     </parent>
     <groupId>com.ddf.mainteam</groupId>
     <artifactId>sfg-pet-clinic</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>sfg-pet-clinic</name>
     <description>SFG Pet Clinic</description>
 
     <properties>
         <java.version>11</java.version>
     </properties>
-
-    <dependencies>
-    </dependencies>
 
     <build>
         <plugins>
@@ -37,13 +34,14 @@
                 <artifactId>maven-release-plugin</artifactId>
                 <configuration>
                     <goals>install</goals>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
                 </configuration>
             </plugin>
         </plugins>
     </build>
 
     <scm>
-        <developerConnection>scm:git:git@github.com:innocentTialo/sfg-pet-clinic.git</developerConnection>
+        <developerConnection>scm:git:https://github.com/innocentTialo/sfg-pet-clinic.git</developerConnection>
+        <tag>sfg-pet-clinic-0.0.1</tag>
     </scm>
-
 </project>
