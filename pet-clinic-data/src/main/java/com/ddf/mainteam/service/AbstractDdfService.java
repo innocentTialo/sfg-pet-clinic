@@ -1,29 +1,19 @@
 package com.ddf.mainteam.service;
 
-import java.util.List;
+import java.util.Set;
 
 /**
  * Created by InnocentTIALO on 5/23/2020.
  */
-public abstract class AbstractDdfService<T, ID> {
+public interface AbstractDdfService<T, ID> {
 
-    protected T save(T t){
-        return null;
-    }
+    T save(T t);
 
-    protected T findById(ID id) {
-        return null;
-    }
+    T findById(ID id);
 
-    protected List<T> findAll() {
-        return null;
-    }
+    Set<T> findAll();
 
-    void delete(T t) {
+    void delete(T t);
 
-    }
-
-    void deleteById(ID id) {
-
-    }
+    void deleteById(ID id);
 }
