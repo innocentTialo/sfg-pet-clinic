@@ -18,4 +18,12 @@ public abstract class AbstractDdfService<T, ID> {
     protected List<T> findAll() {
         return null;
     }
+
+    void delete(T t) {
+
+    }
+
+    void deleteById(ID id) {
+
+    }
 }
