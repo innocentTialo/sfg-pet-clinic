@@ -1,5 +1,7 @@
 package com.ddf.mainteam.controller;
 
+import com.ddf.mainteam.service.AbstractDdfService;
+import com.ddf.mainteam.service.VetService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -8,10 +10,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping("/vets")
-public class VetController {
+public class VetController extends DdfAbstractController {
 
-    @RequestMapping({"", "/", "index", "index.html"})
-    public String listVets() {
-        return "vets/index";
+    private final String indexPagePath = "vets";
+
+    private final VetService vetService;
+
+    public VetController(VetService vetService) {
+        this.vetService = vetService;
+    }
+
+    @Override
+    AbstractDdfService getEntityService() {
+        return vetService;
+    }
+
+    @Override
+    String getTemplateFolderName() {
+        return indexPagePath;
     }
 }
