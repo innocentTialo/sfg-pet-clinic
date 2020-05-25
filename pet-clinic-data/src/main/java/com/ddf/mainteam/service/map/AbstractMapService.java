@@ -3,10 +3,13 @@ package com.ddf.mainteam.service.map;
 import com.ddf.mainteam.model.BaseEntity;
 import com.ddf.mainteam.service.AbstractDdfService;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * Created by InnocentTIALO on 5/23/2020.
@@ -17,6 +20,13 @@ public abstract class AbstractMapService<T extends BaseEntity, ID> implements Ab
 
     T save(ID id, T t) {
         return map.put(id, t);
+    }
+
+    @Override
+    public List<T> save(T... ts) {
+        return Arrays.stream(ts)
+                .map(this::save)
+                .collect(Collectors.toList());
     }
 
     @Override
